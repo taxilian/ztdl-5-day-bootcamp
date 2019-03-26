@@ -97,3 +97,24 @@ If you decide to completely delete the environment from your system you should u
 ```
 conda remove -y -n ztdlbootcamp --all
 ```
+
+### Running in Docker ###
+
+Note that GPU acceleration is not working in the docker image currently, so it will probably not
+be fast enough for deep learning tasks.
+
+
+#### Building ####
+```
+docker build -f docker/Dockerfile -t ztdl .
+```
+
+#### Running ####
+
+This will run as a foreground task so you can stop it with ctrl-c
+
+```
+docker run -it --rm -p 8888:8888 ztdl
+````
+
+Navigate to http://localhost:8888/ and use the token from the output to use Jupyter Notebook!
